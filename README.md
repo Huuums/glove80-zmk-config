@@ -6,8 +6,8 @@ Live Linux layout display using Glorious Engrammer v52.
 
 ## Native learning overlay
 
-Press **Super + F8** to toggle the keyboard-only overlay. Run `./glove80-overlay`
-from this directory to do the same. Size, opacity, and placement are configurable;
+Press **Super + F8** to toggle the keyboard-only overlay. Run `~/.local/bin/glove80-overlay`
+from any directory to do the same. Size, opacity, and placement are configurable;
 see [overlay/README.md](overlay/README.md). No additional firmware change is required.
 
 ## Current status

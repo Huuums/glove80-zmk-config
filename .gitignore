@@ -1,11 +1,14 @@
 *~
-*.uf2
 firmware/src/
 firmware/result*
 firmware/output/
-/src/
-/combined
 .venv/
 __pycache__/
+*.uf2
+/src/
+/combined
 overlay/settings.local.json
 overlay/receiver.log
+.build-venv/
+/build/
+/dist/

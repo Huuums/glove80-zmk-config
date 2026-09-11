@@ -10,11 +10,11 @@ import sys
 import threading
 import urllib.request
 
-from model import ROOT, KeyboardModel, load_settings
+from model import ROOT, FROZEN, KeyboardModel, load_settings, settings_path, receiver_log_path
 
 # Load layer-shell before GTK/libwayland (required by its Python bindings).
 from ctypes import CDLL
-CDLL("libgtk4-layer-shell.so")
+CDLL(str(ROOT/"libgtk4-layer-shell.so") if FROZEN and (ROOT/"libgtk4-layer-shell.so").exists() else "libgtk4-layer-shell.so")
 os.environ["GDK_BACKEND"] = "wayland"
 import gi
 gi.require_version('Gtk', '4.0')
@@ -87,7 +87,8 @@ class Overlay(Gtk.Application):
             overrides = {k: v for k, v in vars(args).items() if k != 'command' and v is not None}
             self.settings = load_settings(overrides)
             if args.command == 'configure':
-                (ROOT / 'overlay/settings.local.json').write_text(json.dumps(self.settings, indent=2)+'\n')
+                settings_path().parent.mkdir(parents=True, exist_ok=True)
+                settings_path().write_text(json.dumps(self.settings, indent=2)+'\n')
             if self.window is None:
                 self.setup()
             self.apply_settings()
@@ -171,9 +172,12 @@ class Overlay(Gtk.Application):
                 if not attempted and self.settings['start_receiver']:
                     attempted = True
                     python = ROOT / '.venv/bin/python'
-                    if python.exists():
-                        with (ROOT / 'overlay/receiver.log').open('a') as log:
-                            self.receiver = subprocess.Popen([str(python), str(ROOT/'receiver/main.py'), '--usb', '--bluetooth', '--port', str(port)],
+                    if FROZEN or python.exists():
+                        log_path = receiver_log_path()
+                        log_path.parent.mkdir(parents=True, exist_ok=True)
+                        command = [sys.executable, '--receiver'] if FROZEN else [str(python), str(ROOT/'receiver/main.py')]
+                        with log_path.open('a') as log:
+                            self.receiver = subprocess.Popen(command + ['--usb', '--bluetooth', '--port', str(port)],
                                                              stdout=log, stderr=log, start_new_session=True)
             with self.lock:
                 self.latest = state
@@ -238,8 +242,12 @@ class Overlay(Gtk.Application):
         Gtk.Application.do_shutdown(self)
 
 
-if __name__ == '__main__':
+def main():
     # Let --help work without opening a display or starting the receiver.
     if '--help' in sys.argv or '-h' in sys.argv:
         arguments(sys.argv[1:])
     raise SystemExit(Overlay().run(sys.argv))
+
+
+if __name__ == '__main__':
+    main()

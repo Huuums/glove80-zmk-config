@@ -1,14 +1,27 @@
 """Shared labels evaluated in JavaScriptCore, no embedded browser required."""
 import json
+import os
+import sys
 from pathlib import Path
 import re
 
-ROOT = Path(__file__).resolve().parents[1]
+FROZEN = getattr(sys, 'frozen', False)
+ROOT = Path(sys._MEIPASS) if FROZEN else Path(__file__).resolve().parents[1]
+
+def settings_path():
+    if FROZEN:
+        return Path(os.environ.get('XDG_CONFIG_HOME', Path.home()/'.config'))/'glove80-overlay/settings.json'
+    return ROOT/'overlay/settings.local.json'
+
+def receiver_log_path():
+    if FROZEN:
+        return Path(os.environ.get('XDG_STATE_HOME', Path.home()/'.local/state'))/'glove80-overlay/receiver.log'
+    return ROOT/'overlay/receiver.log'
 
 
 def load_settings(overrides=None):
     settings = json.loads((ROOT / 'overlay/settings.json').read_text())
-    local = ROOT / 'overlay/settings.local.json'
+    local = settings_path()
     if local.exists():
         settings.update(json.loads(local.read_text()))
     settings.update(overrides or {})

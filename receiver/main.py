@@ -5,11 +5,12 @@ import json
 from pathlib import Path
 import threading
 import time
+import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 from protocol import Decoder, SERVICE_UUID, STATE_UUID, decode
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(sys._MEIPASS) if getattr(sys, 'frozen', False) else Path(__file__).resolve().parents[1]
 STALE_SECONDS = 4
 
 
