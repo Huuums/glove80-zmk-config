@@ -1,2 +1,7 @@
 *~
 *.uf2
+firmware/src/
+firmware/result*
+firmware/output/
+/src/
+/combined

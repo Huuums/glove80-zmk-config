@@ -1,37 +1,67 @@
-# MoErgo Glove80 Custom Configuration for ZMK
+# Glove80 custom firmware
 
-![MoErgo Logo](moergo_logo.png)
+Glorious Engrammer v52 layout with optional Bluetooth/USB layer telemetry.
 
-This repo is the official ZMK configuration of the MoErgo Glove80 wireless split contoured keyboard. Use it to develop your own keymap and easily build your own ZMK firmware to run on your Glove80.
+## Baseline firmware
 
-**NOTE: You can also customize the layout of your Glove80 keyboard with the Glove80 Layout Editor webapp. For most users Glove80 Layout Editor is the recommended and simpler option. More information is available at the official MoErgo Glove80 Support site (see resources below).**
+The source version is pinned to MoErgo v25.11, matching the version in the
+original UF2 filename. `firmware/config/glove80.keymap` is a byte-for-byte copy
+of the export. The editor's `HID_POINTING=y` setting is represented by
+`CONFIG_ZMK_POINTING=y`. Both halves compiled successfully; reproducing
+an editor build does not guarantee byte-for-byte identical firmware.
 
-These steps will get you using your keymap on your keyboard in the fastest time possible. It uses the GitHub Actions feature to build your firmware online.
+The original file checksums are recorded in `firmware/original-checksums.json`.
+Keep the saved UF2 as the restore image.
 
-If you are looking to dig deeper into ZMK and develop new functionality, it is recommended to follow the steps of installing ZMK as found on the official ZMK documentation site (linked below).
+### Local build
 
-## Resources
-- The [official MoErgo Glove80 Support](https://moergo.com/glove80-support) web site. Glove80 documentation and other technical resources.
-- The [official MoErgo Discord Server](https://moergo.com/discord). Instant conversations with other Glove80 users.
+The local build succeeded using Docker. The script now saves new baseline builds under `firmware/output/baseline/`.
+It saves the image, build log,
+and each half's generated Kconfig and devicetree for inspection:
 
-- The [official ZMK Documentation](https://zmk.dev/docs) web site. Find the answers to many of your questions about ZMK Firmware.
-- The [official ZMK Discord Server](https://discord.gg/8cfMkQksSB). Instant conversations with other ZMK developers and users. Great technical resource!
+```sh
+bash scripts/build-firmware.sh
+```
 
-- The [official Glove80 ZMK Distribution](https://github.com/moergo-sc/zmk). Repositiory for ZMK firmware customized for Glove80. 
- 
-## Instructions
-1. Log into, or sign up for, your personal GitHub account.
-2. Create your own repository using this repository as a template ([instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)) and check it out on your local computer.
-3. Edit the keymap file(s) to suit your needs
-4. Commit and push your changes to your personal repo. Upon pushing it, GitHub Actions will start building a new version of your firmware with the updated keymap.
+If Docker is stopped, start it in your own terminal:
 
-## Firmware Files
-To locate your firmware files and reflash your Glove80...
-1. log into GitHub and navigate to your personal config repository you just uploaded your keymap changes to.
-2. Click "Actions" in the main navigation, and in the left navigation click the "Build" link.
-3. Select the desired workflow run in the centre area of the page (based on date and time of the build you wish to use). You can also start a new build from this page by clicking the "Run workflow" button.
-4. After clicking the desired workflow run, you should be presented with a section at the bottom of the page called "Artifacts". This section contains the results of your build, in a file called "glove80.uf2"
-5. Download the glove80.uf2
-6. Flash the firmware to Glove80 according to the user documentation on the official Glove80 Glove80 Support website (linked above)
+```sh
+sudo systemctl start docker.service
+```
 
-Your keyboard is now ready to use.
+The pinned source is already checked out under `firmware/src`. For a fresh
+checkout, clone MoErgo's v25.11 source there:
+
+```sh
+git clone --depth 1 --branch v25.11 https://github.com/moergo-sc/zmk.git firmware/src
+git -C firmware/src rev-parse HEAD
+```
+
+Verify the commit matches the one above, then build from this directory:
+
+```sh
+docker run --rm --network host \
+  -v "$PWD:/work" -w /work \
+  nixos/nix:2.24.11 \
+  sh -c 'nix-build firmware/config -o firmware/result && mkdir -p firmware/output && cp -L firmware/result/glove80.uf2 firmware/output/glove80-baseline.uf2'
+```
+
+The output must be copied out of the container's Nix store before the container
+exits; `firmware/result` alone points inside that temporary store. The first
+build downloads the toolchain and dependencies. Docker may require `sudo` on
+your system. No build command flashes the keyboard.
+
+### GitHub Actions alternative
+
+`.github/workflows/build.yml` checks out the pinned source and builds both
+halves as a combined UF2. The local project is based on `Huuums/glove80-zmk-config`, on branch
+`glove80-layer-viewer`. `origin` points to that fork; `upstream` points to
+`moergo-sc/glove80-zmk-config`. Local changes have not been pushed.
+The baseline workflow uses `firmware/config`; the root `config` directory and
+legacy build scripts are retained from the upstream template.
+
+## References
+
+- [MoErgo build template](https://github.com/moergo-sc/glove80-zmk-config)
+- [Pinned firmware source](https://github.com/moergo-sc/zmk/tree/11454d23596afbdb06380a1125371b19ab65675c)
+- [Layout export documentation](https://docs.moergo.com/layout-editor-guide/advanced-usage-export-import/)

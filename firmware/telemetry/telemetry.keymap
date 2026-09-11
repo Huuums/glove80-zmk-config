@@ -1,0 +1,7 @@
+/* Appended to the exported keymap by default.nix before entering the Nix store. */
+&zephyr_udc0 {
+    layer_telemetry_uart: layer_telemetry_uart {
+        compatible = "zephyr,cdc-acm-uart";
+        label = "Glove80 Layer State";
+    };
+};
