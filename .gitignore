@@ -7,3 +7,5 @@ firmware/output/
 /combined
 .venv/
 __pycache__/
+overlay/settings.local.json
+overlay/receiver.log

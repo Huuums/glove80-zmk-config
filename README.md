@@ -4,6 +4,12 @@ Live Linux layout display using Glorious Engrammer v52.
 
 **Bluetooth/USB implementation and run instructions: [receiver/README.md](receiver/README.md).**
 
+## Native learning overlay
+
+Press **Super + F8** to toggle the keyboard-only overlay. Run `./glove80-overlay`
+from this directory to do the same. Size, opacity, and placement are configurable;
+see [overlay/README.md](overlay/README.md). No additional firmware change is required.
+
 ## Current status
 
 - Original JSON, keymap, and combined UF2 are preserved in the project root.

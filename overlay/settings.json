@@ -1,0 +1,9 @@
+{
+  "width": 900,
+  "opacity": 0.85,
+  "position": "bottom",
+  "margin": 35,
+  "monitor": "",
+  "receiver_port": 8765,
+  "start_receiver": true
+}
