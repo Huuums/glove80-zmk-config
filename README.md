@@ -1,6 +1,44 @@
-# Glove80 custom firmware
+# Glove80 layer view
 
-Glorious Engrammer v52 layout with optional Bluetooth/USB layer telemetry.
+Live Linux layout display using Glorious Engrammer v52.
+
+**Bluetooth/USB implementation and run instructions: [receiver/README.md](receiver/README.md).**
+
+## Current status
+
+- Original JSON, keymap, and combined UF2 are preserved in the project root.
+- All 32 exported layers contain 80 keys. The saved UF2 has valid UF2 block
+  framing and contains the left and right Glove80 family IDs. This is a format
+  check, not proof that the firmware matches the exports or works on hardware.
+- `preview/index.html` supports manual exploration when opened as a file and
+  live updates when served by the receiver.
+- Baseline firmware compiled successfully for both halves. The combined image is
+  `firmware/output/glove80-baseline.uf2`. Its UF2 block numbering, counts, and
+  board family IDs passed validation. Nothing has been flashed by this tool.
+  Hardware behavior still needs testing.
+- Bluetooth and USB telemetry firmware compiled successfully. The Linux receiver
+  and live viewer pass automated checks; keyboard testing is still pending.
+
+## Preview
+
+Open `preview/index.html` in Brave or another browser for offline exploration,
+or open the receiver URL for live layers. Hover a layer pill to preview it, click
+to pin it, and use **Follow keyboard** to return to the keyboard's actual layers.
+Transparent keys inherit from the active lower layers and layer 0. Hover or click
+a key for its binding and description.
+
+The last-input display captures browser-delivered keys while the page is focused.
+Use the test field for composed text. No input is stored or sent to the server.
+Custom behavior labels come from the export; the viewer does not emulate macros.
+
+Regenerate after replacing the JSON export:
+
+```sh
+python scripts/make_preview.py 'Glorious Engrammer v52.json'
+```
+
+Geometry comes from MoErgo's `app/boards/arm/glove80/glove80-layouts.dtsi`
+at commit `11454d23596afbdb06380a1125371b19ab65675c` (v25.11).
 
 ## Baseline firmware
 
@@ -59,6 +97,13 @@ halves as a combined UF2. The local project is based on `Huuums/glove80-zmk-conf
 `moergo-sc/glove80-zmk-config`. Local changes have not been pushed.
 The baseline workflow uses `firmware/config`; the root `config` directory and
 legacy build scripts are retained from the upstream template.
+
+## Implementation status
+
+The user confirmed the baseline works on hardware. Bluetooth/USB telemetry is
+implemented as a build-time addition in `firmware/telemetry`, with the Linux
+receiver in `receiver`. The telemetry build passed compilation and UF2 validation.
+See [live setup and hardware checks](receiver/README.md) for the remaining test.
 
 ## References
 

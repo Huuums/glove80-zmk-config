@@ -5,3 +5,5 @@ firmware/result*
 firmware/output/
 /src/
 /combined
+.venv/
+__pycache__/

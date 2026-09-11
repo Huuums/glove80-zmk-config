@@ -1,0 +1,1930 @@
+{
+  "layout_sha256": "2bbe7b1c994608cb8b1adeb20bff676fc6d372dc5f9f6554b04da4a34d467654",
+  "dts_sha256": "a06fd6c765c4fbdd94a35cb30d0db75daf5f13b5de5d61ff2c38547efdce77ee",
+  "bindings": {
+    "5:35": {
+      "codes": [
+        458758
+      ],
+      "clearsModifiers": false
+    },
+    "5:36": {
+      "codes": [
+        458764
+      ],
+      "clearsModifiers": false
+    },
+    "5:37": {
+      "codes": [
+        458756
+      ],
+      "clearsModifiers": false
+    },
+    "5:38": {
+      "codes": [
+        458760
+      ],
+      "clearsModifiers": false
+    },
+    "5:41": {
+      "codes": [
+        458763
+      ],
+      "clearsModifiers": false
+    },
+    "5:42": {
+      "codes": [
+        458775
+      ],
+      "clearsModifiers": false
+    },
+    "5:43": {
+      "codes": [
+        458769
+      ],
+      "clearsModifiers": false
+    },
+    "5:44": {
+      "codes": [
+        458774
+      ],
+      "clearsModifiers": false
+    },
+    "5:52": {
+      "codes": [
+        458793
+      ],
+      "clearsModifiers": false
+    },
+    "5:53": {
+      "codes": [
+        458825
+      ],
+      "clearsModifiers": false
+    },
+    "5:56": {
+      "codes": [
+        458828
+      ],
+      "clearsModifiers": false
+    },
+    "5:57": {
+      "codes": [
+        458792
+      ],
+      "clearsModifiers": false
+    },
+    "5:68": {
+      "codes": [
+        458977
+      ],
+      "clearsModifiers": false
+    },
+    "5:69": {
+      "codes": [
+        458796
+      ],
+      "clearsModifiers": false
+    },
+    "5:70": {
+      "codes": [
+        458795
+      ],
+      "clearsModifiers": false
+    },
+    "5:73": {
+      "codes": [
+        458794
+      ],
+      "clearsModifiers": false
+    },
+    "5:74": {
+      "codes": [
+        458773
+      ],
+      "clearsModifiers": false
+    },
+    "5:75": {
+      "codes": [
+        458981
+      ],
+      "clearsModifiers": false
+    },
+    "6:0": {
+      "codes": [
+        458758,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "6:1": {
+      "codes": [
+        458758,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "6:2": {
+      "codes": [
+        458758,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "6:3": {
+      "codes": [
+        458758,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "6:4": {
+      "codes": [
+        458758,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "6:10": {
+      "codes": [
+        458758,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "6:11": {
+      "codes": [
+        458758,
+        458782
+      ],
+      "clearsModifiers": true
+    },
+    "6:12": {
+      "codes": [
+        458758,
+        458783
+      ],
+      "clearsModifiers": true
+    },
+    "6:13": {
+      "codes": [
+        458758,
+        458784
+      ],
+      "clearsModifiers": true
+    },
+    "6:14": {
+      "codes": [
+        458758,
+        458785
+      ],
+      "clearsModifiers": true
+    },
+    "6:15": {
+      "codes": [
+        458758,
+        458786
+      ],
+      "clearsModifiers": true
+    },
+    "6:22": {
+      "codes": [
+        458758,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "6:23": {
+      "codes": [
+        458758,
+        458772
+      ],
+      "clearsModifiers": true
+    },
+    "6:24": {
+      "codes": [
+        458758,
+        458780
+      ],
+      "clearsModifiers": true
+    },
+    "6:25": {
+      "codes": [
+        458758,
+        458770
+      ],
+      "clearsModifiers": true
+    },
+    "6:26": {
+      "codes": [
+        458758,
+        458776
+      ],
+      "clearsModifiers": true
+    },
+    "6:27": {
+      "codes": [
+        458758,
+        458798
+      ],
+      "clearsModifiers": true
+    },
+    "6:34": {
+      "codes": [
+        458758,
+        458757
+      ],
+      "clearsModifiers": true
+    },
+    "6:39": {
+      "codes": [
+        458758,
+        458797
+      ],
+      "clearsModifiers": true
+    },
+    "6:41": {
+      "codes": [
+        458763
+      ],
+      "clearsModifiers": false
+    },
+    "6:42": {
+      "codes": [
+        458775
+      ],
+      "clearsModifiers": false
+    },
+    "6:43": {
+      "codes": [
+        458769
+      ],
+      "clearsModifiers": false
+    },
+    "6:44": {
+      "codes": [
+        458774
+      ],
+      "clearsModifiers": false
+    },
+    "6:47": {
+      "codes": [
+        458758,
+        458804
+      ],
+      "clearsModifiers": true
+    },
+    "6:48": {
+      "codes": [
+        458758,
+        458806
+      ],
+      "clearsModifiers": true
+    },
+    "6:49": {
+      "codes": [
+        458758,
+        458807
+      ],
+      "clearsModifiers": true
+    },
+    "6:50": {
+      "codes": [
+        458758,
+        458803
+      ],
+      "clearsModifiers": true
+    },
+    "6:51": {
+      "codes": [
+        458758,
+        458808
+      ],
+      "clearsModifiers": true
+    },
+    "6:54": {
+      "codes": [
+        458758,
+        458827
+      ],
+      "clearsModifiers": true
+    },
+    "6:65": {
+      "codes": [
+        458758,
+        458801
+      ],
+      "clearsModifiers": true
+    },
+    "6:66": {
+      "codes": [
+        458758,
+        34013222
+      ],
+      "clearsModifiers": true
+    },
+    "6:67": {
+      "codes": [
+        458758,
+        34013223
+      ],
+      "clearsModifiers": true
+    },
+    "6:71": {
+      "codes": [
+        458758,
+        458830
+      ],
+      "clearsModifiers": true
+    },
+    "7:0": {
+      "codes": [
+        458764,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "7:1": {
+      "codes": [
+        458764,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "7:2": {
+      "codes": [
+        458764,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "7:3": {
+      "codes": [
+        458764,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "7:4": {
+      "codes": [
+        458764,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "7:10": {
+      "codes": [
+        458764,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "7:11": {
+      "codes": [
+        458764,
+        458782
+      ],
+      "clearsModifiers": true
+    },
+    "7:12": {
+      "codes": [
+        458764,
+        458783
+      ],
+      "clearsModifiers": true
+    },
+    "7:13": {
+      "codes": [
+        458764,
+        458784
+      ],
+      "clearsModifiers": true
+    },
+    "7:14": {
+      "codes": [
+        458764,
+        458785
+      ],
+      "clearsModifiers": true
+    },
+    "7:15": {
+      "codes": [
+        458764,
+        458786
+      ],
+      "clearsModifiers": true
+    },
+    "7:22": {
+      "codes": [
+        458764,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "7:23": {
+      "codes": [
+        458764,
+        458772
+      ],
+      "clearsModifiers": true
+    },
+    "7:24": {
+      "codes": [
+        458764,
+        458780
+      ],
+      "clearsModifiers": true
+    },
+    "7:25": {
+      "codes": [
+        458764,
+        458770
+      ],
+      "clearsModifiers": true
+    },
+    "7:26": {
+      "codes": [
+        458764,
+        458776
+      ],
+      "clearsModifiers": true
+    },
+    "7:27": {
+      "codes": [
+        458764,
+        458798
+      ],
+      "clearsModifiers": true
+    },
+    "7:34": {
+      "codes": [
+        458764,
+        458757
+      ],
+      "clearsModifiers": true
+    },
+    "7:39": {
+      "codes": [
+        458764,
+        458797
+      ],
+      "clearsModifiers": true
+    },
+    "7:41": {
+      "codes": [
+        458763
+      ],
+      "clearsModifiers": false
+    },
+    "7:42": {
+      "codes": [
+        458775
+      ],
+      "clearsModifiers": false
+    },
+    "7:43": {
+      "codes": [
+        458769
+      ],
+      "clearsModifiers": false
+    },
+    "7:44": {
+      "codes": [
+        458774
+      ],
+      "clearsModifiers": false
+    },
+    "7:47": {
+      "codes": [
+        458764,
+        458804
+      ],
+      "clearsModifiers": true
+    },
+    "7:48": {
+      "codes": [
+        458764,
+        458806
+      ],
+      "clearsModifiers": true
+    },
+    "7:49": {
+      "codes": [
+        458764,
+        458807
+      ],
+      "clearsModifiers": true
+    },
+    "7:50": {
+      "codes": [
+        458764,
+        458803
+      ],
+      "clearsModifiers": true
+    },
+    "7:51": {
+      "codes": [
+        458764,
+        458808
+      ],
+      "clearsModifiers": true
+    },
+    "7:54": {
+      "codes": [
+        458764,
+        458827
+      ],
+      "clearsModifiers": true
+    },
+    "7:65": {
+      "codes": [
+        458764,
+        458801
+      ],
+      "clearsModifiers": true
+    },
+    "7:66": {
+      "codes": [
+        458764,
+        34013222
+      ],
+      "clearsModifiers": true
+    },
+    "7:67": {
+      "codes": [
+        458764,
+        34013223
+      ],
+      "clearsModifiers": true
+    },
+    "7:71": {
+      "codes": [
+        458764,
+        458830
+      ],
+      "clearsModifiers": true
+    },
+    "8:0": {
+      "codes": [
+        458756,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "8:1": {
+      "codes": [
+        458756,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "8:2": {
+      "codes": [
+        458756,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "8:3": {
+      "codes": [
+        458756,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "8:4": {
+      "codes": [
+        458756,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "8:10": {
+      "codes": [
+        458756,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "8:11": {
+      "codes": [
+        458756,
+        458782
+      ],
+      "clearsModifiers": true
+    },
+    "8:12": {
+      "codes": [
+        458756,
+        458783
+      ],
+      "clearsModifiers": true
+    },
+    "8:13": {
+      "codes": [
+        458756,
+        458784
+      ],
+      "clearsModifiers": true
+    },
+    "8:14": {
+      "codes": [
+        458756,
+        458785
+      ],
+      "clearsModifiers": true
+    },
+    "8:15": {
+      "codes": [
+        458756,
+        458786
+      ],
+      "clearsModifiers": true
+    },
+    "8:22": {
+      "codes": [
+        458756,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "8:23": {
+      "codes": [
+        458756,
+        458772
+      ],
+      "clearsModifiers": true
+    },
+    "8:24": {
+      "codes": [
+        458756,
+        458780
+      ],
+      "clearsModifiers": true
+    },
+    "8:25": {
+      "codes": [
+        458756,
+        458770
+      ],
+      "clearsModifiers": true
+    },
+    "8:26": {
+      "codes": [
+        458756,
+        458776
+      ],
+      "clearsModifiers": true
+    },
+    "8:27": {
+      "codes": [
+        458756,
+        458798
+      ],
+      "clearsModifiers": true
+    },
+    "8:34": {
+      "codes": [
+        458756,
+        458757
+      ],
+      "clearsModifiers": true
+    },
+    "8:39": {
+      "codes": [
+        458756,
+        458797
+      ],
+      "clearsModifiers": true
+    },
+    "8:41": {
+      "codes": [
+        458763
+      ],
+      "clearsModifiers": false
+    },
+    "8:42": {
+      "codes": [
+        458775
+      ],
+      "clearsModifiers": false
+    },
+    "8:43": {
+      "codes": [
+        458769
+      ],
+      "clearsModifiers": false
+    },
+    "8:44": {
+      "codes": [
+        458774
+      ],
+      "clearsModifiers": false
+    },
+    "8:47": {
+      "codes": [
+        458756,
+        458804
+      ],
+      "clearsModifiers": true
+    },
+    "8:48": {
+      "codes": [
+        458756,
+        458806
+      ],
+      "clearsModifiers": true
+    },
+    "8:49": {
+      "codes": [
+        458756,
+        458807
+      ],
+      "clearsModifiers": true
+    },
+    "8:50": {
+      "codes": [
+        458756,
+        458803
+      ],
+      "clearsModifiers": true
+    },
+    "8:51": {
+      "codes": [
+        458756,
+        458808
+      ],
+      "clearsModifiers": true
+    },
+    "8:54": {
+      "codes": [
+        458756,
+        458827
+      ],
+      "clearsModifiers": true
+    },
+    "8:65": {
+      "codes": [
+        458756,
+        458801
+      ],
+      "clearsModifiers": true
+    },
+    "8:66": {
+      "codes": [
+        458756,
+        34013222
+      ],
+      "clearsModifiers": true
+    },
+    "8:67": {
+      "codes": [
+        458756,
+        34013223
+      ],
+      "clearsModifiers": true
+    },
+    "8:71": {
+      "codes": [
+        458756,
+        458830
+      ],
+      "clearsModifiers": true
+    },
+    "9:0": {
+      "codes": [
+        458760,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "9:1": {
+      "codes": [
+        458760,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "9:2": {
+      "codes": [
+        458760,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "9:3": {
+      "codes": [
+        458760,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "9:4": {
+      "codes": [
+        458760,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "9:10": {
+      "codes": [
+        458760,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "9:11": {
+      "codes": [
+        458760,
+        458782
+      ],
+      "clearsModifiers": true
+    },
+    "9:12": {
+      "codes": [
+        458760,
+        458783
+      ],
+      "clearsModifiers": true
+    },
+    "9:13": {
+      "codes": [
+        458760,
+        458784
+      ],
+      "clearsModifiers": true
+    },
+    "9:14": {
+      "codes": [
+        458760,
+        458785
+      ],
+      "clearsModifiers": true
+    },
+    "9:15": {
+      "codes": [
+        458760,
+        458786
+      ],
+      "clearsModifiers": true
+    },
+    "9:22": {
+      "codes": [
+        458760,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "9:23": {
+      "codes": [
+        458760,
+        458772
+      ],
+      "clearsModifiers": true
+    },
+    "9:24": {
+      "codes": [
+        458760,
+        458780
+      ],
+      "clearsModifiers": true
+    },
+    "9:25": {
+      "codes": [
+        458760,
+        458770
+      ],
+      "clearsModifiers": true
+    },
+    "9:26": {
+      "codes": [
+        458760,
+        458776
+      ],
+      "clearsModifiers": true
+    },
+    "9:27": {
+      "codes": [
+        458760,
+        458798
+      ],
+      "clearsModifiers": true
+    },
+    "9:34": {
+      "codes": [
+        458760,
+        458757
+      ],
+      "clearsModifiers": true
+    },
+    "9:39": {
+      "codes": [
+        458760,
+        458797
+      ],
+      "clearsModifiers": true
+    },
+    "9:41": {
+      "codes": [
+        458763
+      ],
+      "clearsModifiers": false
+    },
+    "9:42": {
+      "codes": [
+        458775
+      ],
+      "clearsModifiers": false
+    },
+    "9:43": {
+      "codes": [
+        458769
+      ],
+      "clearsModifiers": false
+    },
+    "9:44": {
+      "codes": [
+        458774
+      ],
+      "clearsModifiers": false
+    },
+    "9:47": {
+      "codes": [
+        458760,
+        458804
+      ],
+      "clearsModifiers": true
+    },
+    "9:48": {
+      "codes": [
+        458760,
+        458806
+      ],
+      "clearsModifiers": true
+    },
+    "9:49": {
+      "codes": [
+        458760,
+        458807
+      ],
+      "clearsModifiers": true
+    },
+    "9:50": {
+      "codes": [
+        458760,
+        458803
+      ],
+      "clearsModifiers": true
+    },
+    "9:51": {
+      "codes": [
+        458760,
+        458808
+      ],
+      "clearsModifiers": true
+    },
+    "9:54": {
+      "codes": [
+        458760,
+        458827
+      ],
+      "clearsModifiers": true
+    },
+    "9:65": {
+      "codes": [
+        458760,
+        458801
+      ],
+      "clearsModifiers": true
+    },
+    "9:66": {
+      "codes": [
+        458760,
+        34013222
+      ],
+      "clearsModifiers": true
+    },
+    "9:67": {
+      "codes": [
+        458760,
+        34013223
+      ],
+      "clearsModifiers": true
+    },
+    "9:71": {
+      "codes": [
+        458760,
+        458830
+      ],
+      "clearsModifiers": true
+    },
+    "10:5": {
+      "codes": [
+        458763,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "10:6": {
+      "codes": [
+        458763,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "10:7": {
+      "codes": [
+        458763,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "10:8": {
+      "codes": [
+        458763,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "10:9": {
+      "codes": [
+        458763,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "10:16": {
+      "codes": [
+        458763,
+        458787
+      ],
+      "clearsModifiers": true
+    },
+    "10:17": {
+      "codes": [
+        458763,
+        458788
+      ],
+      "clearsModifiers": true
+    },
+    "10:18": {
+      "codes": [
+        458763,
+        458789
+      ],
+      "clearsModifiers": true
+    },
+    "10:19": {
+      "codes": [
+        458763,
+        458790
+      ],
+      "clearsModifiers": true
+    },
+    "10:20": {
+      "codes": [
+        458763,
+        458791
+      ],
+      "clearsModifiers": true
+    },
+    "10:21": {
+      "codes": [
+        458763,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "10:28": {
+      "codes": [
+        458763,
+        458779
+      ],
+      "clearsModifiers": true
+    },
+    "10:29": {
+      "codes": [
+        458763,
+        458767
+      ],
+      "clearsModifiers": true
+    },
+    "10:30": {
+      "codes": [
+        458763,
+        458759
+      ],
+      "clearsModifiers": true
+    },
+    "10:31": {
+      "codes": [
+        458763,
+        458771
+      ],
+      "clearsModifiers": true
+    },
+    "10:32": {
+      "codes": [
+        458763,
+        458781
+      ],
+      "clearsModifiers": true
+    },
+    "10:33": {
+      "codes": [
+        458763,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "10:35": {
+      "codes": [
+        458758
+      ],
+      "clearsModifiers": false
+    },
+    "10:36": {
+      "codes": [
+        458764
+      ],
+      "clearsModifiers": false
+    },
+    "10:37": {
+      "codes": [
+        458756
+      ],
+      "clearsModifiers": false
+    },
+    "10:38": {
+      "codes": [
+        458760
+      ],
+      "clearsModifiers": false
+    },
+    "10:40": {
+      "codes": [
+        458763,
+        458766
+      ],
+      "clearsModifiers": true
+    },
+    "10:45": {
+      "codes": [
+        458763,
+        458778
+      ],
+      "clearsModifiers": true
+    },
+    "10:55": {
+      "codes": [
+        458763,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "10:58": {
+      "codes": [
+        458763,
+        458765
+      ],
+      "clearsModifiers": true
+    },
+    "10:59": {
+      "codes": [
+        458763,
+        458768
+      ],
+      "clearsModifiers": true
+    },
+    "10:60": {
+      "codes": [
+        458763,
+        458762
+      ],
+      "clearsModifiers": true
+    },
+    "10:61": {
+      "codes": [
+        458763,
+        458761
+      ],
+      "clearsModifiers": true
+    },
+    "10:62": {
+      "codes": [
+        458763,
+        458777
+      ],
+      "clearsModifiers": true
+    },
+    "10:72": {
+      "codes": [
+        458763,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "10:76": {
+      "codes": [
+        458763,
+        458799
+      ],
+      "clearsModifiers": true
+    },
+    "10:77": {
+      "codes": [
+        458763,
+        458800
+      ],
+      "clearsModifiers": true
+    },
+    "10:78": {
+      "codes": [
+        458763,
+        458805
+      ],
+      "clearsModifiers": true
+    },
+    "11:5": {
+      "codes": [
+        458775,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "11:6": {
+      "codes": [
+        458775,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "11:7": {
+      "codes": [
+        458775,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "11:8": {
+      "codes": [
+        458775,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "11:9": {
+      "codes": [
+        458775,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "11:16": {
+      "codes": [
+        458775,
+        458787
+      ],
+      "clearsModifiers": true
+    },
+    "11:17": {
+      "codes": [
+        458775,
+        458788
+      ],
+      "clearsModifiers": true
+    },
+    "11:18": {
+      "codes": [
+        458775,
+        458789
+      ],
+      "clearsModifiers": true
+    },
+    "11:19": {
+      "codes": [
+        458775,
+        458790
+      ],
+      "clearsModifiers": true
+    },
+    "11:20": {
+      "codes": [
+        458775,
+        458791
+      ],
+      "clearsModifiers": true
+    },
+    "11:21": {
+      "codes": [
+        458775,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "11:28": {
+      "codes": [
+        458775,
+        458779
+      ],
+      "clearsModifiers": true
+    },
+    "11:29": {
+      "codes": [
+        458775,
+        458767
+      ],
+      "clearsModifiers": true
+    },
+    "11:30": {
+      "codes": [
+        458775,
+        458759
+      ],
+      "clearsModifiers": true
+    },
+    "11:31": {
+      "codes": [
+        458775,
+        458771
+      ],
+      "clearsModifiers": true
+    },
+    "11:32": {
+      "codes": [
+        458775,
+        458781
+      ],
+      "clearsModifiers": true
+    },
+    "11:33": {
+      "codes": [
+        458775,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "11:35": {
+      "codes": [
+        458758
+      ],
+      "clearsModifiers": false
+    },
+    "11:36": {
+      "codes": [
+        458764
+      ],
+      "clearsModifiers": false
+    },
+    "11:37": {
+      "codes": [
+        458756
+      ],
+      "clearsModifiers": false
+    },
+    "11:38": {
+      "codes": [
+        458760
+      ],
+      "clearsModifiers": false
+    },
+    "11:40": {
+      "codes": [
+        458775,
+        458766
+      ],
+      "clearsModifiers": true
+    },
+    "11:45": {
+      "codes": [
+        458775,
+        458778
+      ],
+      "clearsModifiers": true
+    },
+    "11:55": {
+      "codes": [
+        458775,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "11:58": {
+      "codes": [
+        458775,
+        458765
+      ],
+      "clearsModifiers": true
+    },
+    "11:59": {
+      "codes": [
+        458775,
+        458768
+      ],
+      "clearsModifiers": true
+    },
+    "11:60": {
+      "codes": [
+        458775,
+        458762
+      ],
+      "clearsModifiers": true
+    },
+    "11:61": {
+      "codes": [
+        458775,
+        458761
+      ],
+      "clearsModifiers": true
+    },
+    "11:62": {
+      "codes": [
+        458775,
+        458777
+      ],
+      "clearsModifiers": true
+    },
+    "11:72": {
+      "codes": [
+        458775,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "11:76": {
+      "codes": [
+        458775,
+        458799
+      ],
+      "clearsModifiers": true
+    },
+    "11:77": {
+      "codes": [
+        458775,
+        458800
+      ],
+      "clearsModifiers": true
+    },
+    "11:78": {
+      "codes": [
+        458775,
+        458805
+      ],
+      "clearsModifiers": true
+    },
+    "12:5": {
+      "codes": [
+        458769,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "12:6": {
+      "codes": [
+        458769,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "12:7": {
+      "codes": [
+        458769,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "12:8": {
+      "codes": [
+        458769,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "12:9": {
+      "codes": [
+        458769,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "12:16": {
+      "codes": [
+        458769,
+        458787
+      ],
+      "clearsModifiers": true
+    },
+    "12:17": {
+      "codes": [
+        458769,
+        458788
+      ],
+      "clearsModifiers": true
+    },
+    "12:18": {
+      "codes": [
+        458769,
+        458789
+      ],
+      "clearsModifiers": true
+    },
+    "12:19": {
+      "codes": [
+        458769,
+        458790
+      ],
+      "clearsModifiers": true
+    },
+    "12:20": {
+      "codes": [
+        458769,
+        458791
+      ],
+      "clearsModifiers": true
+    },
+    "12:21": {
+      "codes": [
+        458769,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "12:28": {
+      "codes": [
+        458769,
+        458779
+      ],
+      "clearsModifiers": true
+    },
+    "12:29": {
+      "codes": [
+        458769,
+        458767
+      ],
+      "clearsModifiers": true
+    },
+    "12:30": {
+      "codes": [
+        458769,
+        458759
+      ],
+      "clearsModifiers": true
+    },
+    "12:31": {
+      "codes": [
+        458769,
+        458771
+      ],
+      "clearsModifiers": true
+    },
+    "12:32": {
+      "codes": [
+        458769,
+        458781
+      ],
+      "clearsModifiers": true
+    },
+    "12:33": {
+      "codes": [
+        458769,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "12:35": {
+      "codes": [
+        458758
+      ],
+      "clearsModifiers": false
+    },
+    "12:36": {
+      "codes": [
+        458764
+      ],
+      "clearsModifiers": false
+    },
+    "12:37": {
+      "codes": [
+        458756
+      ],
+      "clearsModifiers": false
+    },
+    "12:38": {
+      "codes": [
+        458760
+      ],
+      "clearsModifiers": false
+    },
+    "12:40": {
+      "codes": [
+        458769,
+        458766
+      ],
+      "clearsModifiers": true
+    },
+    "12:45": {
+      "codes": [
+        458769,
+        458778
+      ],
+      "clearsModifiers": true
+    },
+    "12:55": {
+      "codes": [
+        458769,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "12:58": {
+      "codes": [
+        458769,
+        458765
+      ],
+      "clearsModifiers": true
+    },
+    "12:59": {
+      "codes": [
+        458769,
+        458768
+      ],
+      "clearsModifiers": true
+    },
+    "12:60": {
+      "codes": [
+        458769,
+        458762
+      ],
+      "clearsModifiers": true
+    },
+    "12:61": {
+      "codes": [
+        458769,
+        458761
+      ],
+      "clearsModifiers": true
+    },
+    "12:62": {
+      "codes": [
+        458769,
+        458777
+      ],
+      "clearsModifiers": true
+    },
+    "12:72": {
+      "codes": [
+        458769,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "12:76": {
+      "codes": [
+        458769,
+        458799
+      ],
+      "clearsModifiers": true
+    },
+    "12:77": {
+      "codes": [
+        458769,
+        458800
+      ],
+      "clearsModifiers": true
+    },
+    "12:78": {
+      "codes": [
+        458769,
+        458805
+      ],
+      "clearsModifiers": true
+    },
+    "13:5": {
+      "codes": [
+        458774,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "13:6": {
+      "codes": [
+        458774,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "13:7": {
+      "codes": [
+        458774,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "13:8": {
+      "codes": [
+        458774,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "13:9": {
+      "codes": [
+        458774,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "13:16": {
+      "codes": [
+        458774,
+        458787
+      ],
+      "clearsModifiers": true
+    },
+    "13:17": {
+      "codes": [
+        458774,
+        458788
+      ],
+      "clearsModifiers": true
+    },
+    "13:18": {
+      "codes": [
+        458774,
+        458789
+      ],
+      "clearsModifiers": true
+    },
+    "13:19": {
+      "codes": [
+        458774,
+        458790
+      ],
+      "clearsModifiers": true
+    },
+    "13:20": {
+      "codes": [
+        458774,
+        458791
+      ],
+      "clearsModifiers": true
+    },
+    "13:21": {
+      "codes": [
+        458774,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "13:28": {
+      "codes": [
+        458774,
+        458779
+      ],
+      "clearsModifiers": true
+    },
+    "13:29": {
+      "codes": [
+        458774,
+        458767
+      ],
+      "clearsModifiers": true
+    },
+    "13:30": {
+      "codes": [
+        458774,
+        458759
+      ],
+      "clearsModifiers": true
+    },
+    "13:31": {
+      "codes": [
+        458774,
+        458771
+      ],
+      "clearsModifiers": true
+    },
+    "13:32": {
+      "codes": [
+        458774,
+        458781
+      ],
+      "clearsModifiers": true
+    },
+    "13:33": {
+      "codes": [
+        458774,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "13:35": {
+      "codes": [
+        458758
+      ],
+      "clearsModifiers": false
+    },
+    "13:36": {
+      "codes": [
+        458764
+      ],
+      "clearsModifiers": false
+    },
+    "13:37": {
+      "codes": [
+        458756
+      ],
+      "clearsModifiers": false
+    },
+    "13:38": {
+      "codes": [
+        458760
+      ],
+      "clearsModifiers": false
+    },
+    "13:40": {
+      "codes": [
+        458774,
+        458766
+      ],
+      "clearsModifiers": true
+    },
+    "13:45": {
+      "codes": [
+        458774,
+        458778
+      ],
+      "clearsModifiers": true
+    },
+    "13:55": {
+      "codes": [
+        458774,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "13:58": {
+      "codes": [
+        458774,
+        458765
+      ],
+      "clearsModifiers": true
+    },
+    "13:59": {
+      "codes": [
+        458774,
+        458768
+      ],
+      "clearsModifiers": true
+    },
+    "13:60": {
+      "codes": [
+        458774,
+        458762
+      ],
+      "clearsModifiers": true
+    },
+    "13:61": {
+      "codes": [
+        458774,
+        458761
+      ],
+      "clearsModifiers": true
+    },
+    "13:62": {
+      "codes": [
+        458774,
+        458777
+      ],
+      "clearsModifiers": true
+    },
+    "13:72": {
+      "codes": [
+        458774,
+        0
+      ],
+      "clearsModifiers": true
+    },
+    "13:76": {
+      "codes": [
+        458774,
+        458799
+      ],
+      "clearsModifiers": true
+    },
+    "13:77": {
+      "codes": [
+        458774,
+        458800
+      ],
+      "clearsModifiers": true
+    },
+    "13:78": {
+      "codes": [
+        458774,
+        458805
+      ],
+      "clearsModifiers": true
+    }
+  }
+}

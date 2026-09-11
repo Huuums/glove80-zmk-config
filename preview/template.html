@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glove80 · Layer view</title>
+<style>
+:root {color-scheme:light; font:14px system-ui,sans-serif; background:#f2f4f8; color:#243044; --accent:#3569cc; --line:#dce2eb; --muted:#66748b}
+* {box-sizing:border-box}
+body {margin:0}
+header {padding:20px 32px; background:#fff; border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand {font-size:12px;font-weight:750;letter-spacing:.16em;color:var(--accent);text-transform:uppercase}
+h1 {font-size:23px;margin:4px 0 0;font-weight:650}
+p {line-height:1.5;margin:6px 0;color:var(--muted)}
+main {max-width:1500px;margin:22px auto;padding:0 24px}
+.panel {background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:16px}
+.toolbar {display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+h2 {font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:0;color:#5a687c}
+button {font:inherit;cursor:pointer;border:1px solid var(--line);background:#fff;color:inherit;border-radius:7px;padding:8px 12px}
+button:hover {border-color:var(--accent);background:#f0f5ff}
+button:focus-visible,textarea:focus-visible {outline:3px solid #6c9beb;outline-offset:2px}
+#follow {background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+#layers {display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+#layers button {display:flex;align-items:center;gap:7px;padding:6px 9px;font-size:12px;position:relative}
+#layers .index {color:#7b8798;font-size:10px;min-width:12px}
+#layers button[aria-pressed=true] {color:#2156af;background:#eaf1ff;border-color:#77a0e3}
+#layers button[data-live=true]::after {content:'';width:5px;height:5px;border-radius:50%;background:#22a07c}
+#layers button[data-live=true] .index {color:#138465}
+.hint {font-size:12px}
+#view-name {font-size:18px;font-weight:650;color:#243044}
+#view-kind {font-size:11px;background:#eaf1ff;color:#3569cc;padding:4px 8px;border-radius:4px;margin-right:8px;text-transform:uppercase;letter-spacing:.04em}
+.keyboard {overflow:auto;margin:8px -8px 0}
+svg {width:100%;height:auto;min-width:700px;display:block}
+/* Adapted from Nick Coutsos' Keymap Editor Keys/styles.module.css (MIT).
+   See embedded license and preview/vendor/keymap-editor-LICENSE.txt. */
+.key {color:#999;font-size:110%}
+.key .cap {fill:whitesmoke;stroke:#bcc6d4;stroke-width:1.2;rx:5px}
+.key:hover .cap,.key:focus .cap {stroke:#3569cc;stroke-width:3}
+.key:focus {outline:none}
+.key .legend {fill:var(--key-foreground,#253044);text-anchor:middle;dominant-baseline:middle;pointer-events:none;font-weight:550}
+.key .behaviour-binding {font-size:10px;opacity:.5;fill:#253044}
+.key .key-icon {font-size:14px;fill:var(--key-foreground,#43516a);opacity:.8}
+.key .hold {font-size:11px;fill:var(--key-foreground,#43516a);text-anchor:middle}
+.key .edge {fill:#c7ced9;opacity:.55}
+.key[data-empty=true] {opacity:.48}
+#detail {min-height:58px;white-space:pre-wrap;padding:12px 0 0;border-top:1px solid var(--line);font-size:13px}
+.bottom {display:grid;grid-template-columns:minmax(200px,1fr) minmax(260px,1.3fr);gap:24px;align-items:center}
+#last-input {display:block;min-height:56px;font-size:34px;font-weight:650;line-height:1.5;overflow-wrap:anywhere;color:#244e90;white-space:pre-wrap}
+#input-meta {font-size:12px;min-height:18px}
+textarea {width:100%;resize:none;height:65px;border:1px solid var(--line);border-radius:8px;padding:12px;font:inherit;background:#f9fbff;color:#243044}
+#focus-status {font-size:12px;margin-top:8px}
+#connection {font-size:12px;max-width:440px;text-align:right}
+footer {font-size:11px;color:var(--muted);padding:0 4px 22px;display:flex;justify-content:space-between;gap:20px}
+summary {cursor:pointer}
+#license {white-space:pre-wrap;max-width:750px;font-size:11px}
+@media(max-width:700px){header{padding:16px;align-items:flex-start}main{padding:0 10px;margin-top:12px}.panel{padding:14px}.bottom{grid-template-columns:1fr;gap:12px}h1{font-size:18px}#connection{max-width:160px}footer{display:block}}
+</style>
+<header><div><div class="brand">Glove80 / Layer view</div><h1 id="title"></h1></div><p id="connection" role="status">Manual preview · Receiver not connected</p></header>
+<main>
+<section class="panel" aria-label="Layer selection">
+<div class="toolbar"><h2>Layers <span class="hint">· green dot = active on keyboard</span></h2><button id="follow">Follow keyboard</button></div>
+<div id="layers" aria-label="Preview a layer"></div>
+<p class="hint">Hover to preview · Click to pin · Transparent keys inherit from active lower layers and the base layer.</p>
+</section>
+<section class="panel" aria-label="Keyboard layout">
+<div class="toolbar"><div><span id="view-kind">Preview</span><span id="view-name"></span> <span id="modifier-state" class="hint"></span></div><label class="hint"><input id="effective" type="checkbox" checked> Show inherited keys</label></div>
+<div class="keyboard"><svg id="keyboard" viewBox="-30 -30 1860 890" role="group" aria-label="Glove80 key assignments"></svg></div>
+<p id="detail" aria-live="polite">Hover or click a key to see its binding and tap/hold description.</p>
+</section>
+<section class="panel bottom" aria-label="Input test">
+<div><div class="toolbar"><h2>Last input</h2><button id="clear-input" aria-label="Clear last input">Clear</button></div><output id="last-input" aria-live="polite">—</output><p id="input-meta">Press a key while this page is focused.</p></div>
+<div><label for="input-pad" class="hint">Try typing here, including composed characters</label><textarea id="input-pad" rows="1" spellcheck="false" autocomplete="off" placeholder="Click here and try your layout…"></textarea><p id="focus-status">Listening while this page is focused · input stays in this tab</p></div>
+</section>
+<footer><span>Layer previews do not change your keyboard. Custom labels come from your layout export.</span><details><summary>Display credits &amp; license</summary><p>Key presentation adapted from Nick Coutsos’ MIT-licensed Keymap Editor. Glove80 geometry from MoErgo ZMK. Symbolic icons are local text equivalents.</p><pre id="license">__EDITOR_LICENSE__</pre></details></footer>
+</main>
+<script id="data" type="application/json">__LAYOUT_DATA__</script>
+<script>
+const data=JSON.parse(document.getElementById('data').textContent);
+const ns='http://www.w3.org/2000/svg', byId=id=>document.getElementById(id);
+const liveLayers=new Set([0]);
+let hoverLayer=null, pinnedLayer=null, connected=false, transport='', lastSignature='', currentKey=null, liveModifiers=null;
+const hasReceiver=location.protocol==='http:' || location.protocol==='https:';
+byId('title').textContent=data.title;
+__KEY_LABELS__
+function previewLayer() {return hoverLayer ?? pinnedLayer;}
+function displayedLayers() {
+  const target=previewLayer();
+  if(target===null)return [...liveLayers].sort((a,b)=>b-a);
+  // Preview this layer as the topmost layer, preserving only ACTIVE lower layers.
+  return [...new Set([0,target,...[...liveLayers].filter(i=>i<target)])].sort((a,b)=>b-a);
+}
+function resolve(position) {
+  for(const layer of displayedLayers()) {const key=data.layers[layer][position];if(!byId('effective').checked||binding(key).trim()!=='&trans')return {key,layer};}
+  return {key:{value:'&none'},layer:0};
+}
+function element(tag,attrs={},text='') {const el=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,v));el.textContent=text;return el;}
+function describe(i) {const {key,layer}=resolve(i);byId('detail').textContent=`${label(key)} · ${data.layer_names[layer]} · Key ${i+1}\n${key.resolved?.clearsModifiers?'Releases modifiers, then taps these keys in sequence.':key.decoration?.description||binding(key)}${key.decoration?.description||key.resolved?'\n'+binding(key):''}`;}
+function render() {
+  const target=previewLayer(), order=displayedLayers();
+  byId('view-kind').textContent=hoverLayer!==null?'Hover preview':pinnedLayer!==null?'Pinned preview':connected?'Live':'Preview';
+  byId('view-name').textContent=target===null?order.map(i=>data.layer_names[i]).join(' + '):data.layer_names[target];
+  byId('keyboard').style.opacity=target===null&&hasReceiver&&!connected?'0.35':'1';
+  [...byId('layers').children].forEach((b,i)=>{b.setAttribute('aria-pressed',target===null?liveLayers.has(i):i===target);b.setAttribute('data-live',connected&&liveLayers.has(i));});
+  byId('modifier-state').textContent=!connected?'':liveModifiers===null?'· Modifier state unavailable (older firmware)':'· '+([liveModifiers&0x11?'Ctrl':'',liveModifiers&0x22?'Shift':'',liveModifiers&0x44?'Alt':'',liveModifiers&0x88?'Super':''].filter(Boolean).join(' + ')||'No modifiers');
+  byId('keyboard').replaceChildren();
+  data.geometry.forEach(([w,h,x,y,rot,rx,ry],i)=>{
+    const {key,layer}=resolve(i),name=label(key),raw=binding(key);
+    const group=element('g',{class:'key',tabindex:0,role:'button','data-position':i,'data-layer':layer,'data-empty':raw==='&none','aria-label':`${name}: ${raw}`,transform:`rotate(${rot/100} ${rx} ${ry})`});
+    const color=key.decoration?.background;
+    const foreground=key.decoration?.color;
+    if(/^#[0-9a-f]{6}([0-9a-f]{2})?$/i.test(foreground||''))group.style.setProperty('--key-foreground',foreground);
+    group.append(element('rect',{class:'edge',x:x+3,y:y+7,width:w-6,height:h-9,rx:7}));
+    const cap=element('rect',{class:'cap',x:x+4,y:y+3,width:w-8,height:h-11,rx:5});
+    if(/^#[0-9a-f]{6}([0-9a-f]{2})?$/i.test(color||''))cap.style.fill=color;
+    group.append(cap);
+    // As in Keymap Editor, keep behavior separate from the main symbol and
+    // reduce the type size for long/complex bindings.
+    const behavior=raw.match(/^&[a-zA-Z_]+/)?.[0]||'';
+    if(behavior&&!['&kp','&none','&trans'].includes(behavior))group.append(element('text',{class:'behaviour-binding',x:x+10,y:y+16},behavior.length>13?behavior.slice(0,12)+'…':behavior));
+    const icon=icons[key.decoration?.icon];
+    if(icon)group.append(element('text',{class:'key-icon',x:x+w-12,y:y+28,'text-anchor':'end'},icon));
+    const size=name.length===1?30:name.length>10?12:name.length>6?15:20;
+    group.append(element('text',{class:'legend',x:x+w/2,y:y+h/2,'font-size':size},name.length>14?name.slice(0,13)+'…':name));
+    const desc=key.decoration?.description||'';
+    const hold=desc.match(/Hold for ([^.\n]+)/i)?.[1];
+    if(hold)group.append(element('text',{class:'hold',x:x+w/2,y:y+h-19},hold.length>14?hold.slice(0,13)+'…':hold));
+    group.append(element('title',{},`${name} · ${data.layer_names[layer]}\n${raw}\n${desc}`));
+    const inspect=()=>{currentKey=i;describe(i);};
+    group.addEventListener('mouseenter',inspect);group.addEventListener('focus',inspect);group.addEventListener('click',inspect);
+    group.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();inspect();}});
+    byId('keyboard').append(group);
+  });
+  if(currentKey!==null)describe(currentKey);
+}
+data.layer_names.forEach((name,i)=>{
+  const button=document.createElement('button');
+  const index=document.createElement('span');index.className='index';index.textContent=i;
+  const text=document.createElement('span');text.textContent=name;button.append(index,text);
+  button.setAttribute('aria-label',`Preview layer ${i}: ${name}`);
+  button.addEventListener('mouseenter',()=>{hoverLayer=i;render();});
+  button.addEventListener('mouseleave',()=>{if(hoverLayer===i){hoverLayer=null;render();}});
+  button.addEventListener('focus',()=>{hoverLayer=i;render();});
+  button.addEventListener('blur',()=>{if(hoverLayer===i){hoverLayer=null;render();}});
+  button.addEventListener('click',()=>{pinnedLayer=i;hoverLayer=null;render();});
+  byId('layers').append(button);
+});
+byId('follow').addEventListener('click',()=>{pinnedLayer=null;hoverLayer=null;render();});
+byId('effective').addEventListener('change',render);
+render();
+async function poll() {
+  try {
+    const response=await fetch('/state',{cache:'no-store',signal:AbortSignal.timeout(2000)});
+    if(!response.ok)throw Error('Receiver unavailable');
+    const state=await response.json();
+    connected=Boolean(state.connected)&&state.layer_count===data.layers.length;
+    if(connected) {
+      liveLayers.clear();state.layers.forEach(i=>liveLayers.add(i));transport=state.transport;liveModifiers=state.modifiers??null;
+      byId('connection').textContent=`Connected over ${transport} · ${state.layers.map(i=>data.layer_names[i]).join(' + ')}`;
+    } else byId('connection').textContent=state.connected?'Layout mismatch · Use the matching JSON export':'Disconnected · '+(Object.values(state.errors||{}).join(' · ')||'Waiting for keyboard');
+    const signature=JSON.stringify([connected,[...liveLayers],liveModifiers]);
+    if(signature!==lastSignature){render();lastSignature=signature;}
+  } catch(error) {
+    if(connected){connected=false;render();}lastSignature='';
+    byId('connection').textContent='Disconnected · Local receiver unavailable';
+  } finally {setTimeout(poll,100);}
+}
+if(hasReceiver)poll();
+// Only browser-delivered input while focused. No server requests or storage.
+function showInput(value,meta) {byId('last-input').textContent=value;byId('input-meta').textContent=meta;}
+function keyName(key) {return ({' ':'Space',Control:'Ctrl',Meta:'Super',Escape:'Esc',ArrowLeft:'←',ArrowRight:'→',ArrowUp:'↑',ArrowDown:'↓'})[key]||key;}
+document.addEventListener('keydown',event=>{
+  if(!document.hasFocus()||event.isComposing||['Process','Unidentified','Dead'].includes(event.key))return;
+  const altGraph=event.getModifierState?.('AltGraph');
+  if([...event.key].length===1 && ((!event.ctrlKey&&!event.altKey&&!event.metaKey)||altGraph)) {
+    // event.key normally already contains the produced character. Some sources
+    // report the unshifted symbol; the export's en-US locale supplies a fallback.
+    const value=event.shiftKey&&data.locale==='en-US'?(shiftedCharacters[event.key]||event.key):event.key;
+    showInput(keyName(value),event.repeat?'Key held · repeating':'Character received by this page');
+    return;
+  }
+  const chord=[];
+  for(const [pressed,key] of [[event.ctrlKey,'Control'],[event.altKey,'Alt'],[event.shiftKey,'Shift'],[event.metaKey,'Meta']])if(pressed&&event.key!==key)chord.push(keyName(key));
+  chord.push(keyName(event.key));
+  showInput(chord.join(' + '),event.repeat?'Key held · repeating':'Key received by this page');
+});
+byId('input-pad').addEventListener('input',event=>{
+  if(event.isComposing)return;
+  const value=event.data||event.target.value;
+  if(value&&value!=='\n')showInput(value,'Text received by this page');
+  event.target.value='';
+});
+byId('input-pad').addEventListener('compositionend',event=>{if(event.data)showInput(event.data,'Composed text received by this page');byId('input-pad').value='';});
+byId('clear-input').addEventListener('click',()=>{showInput('—','Press a key while this page is focused.');byId('input-pad').value='';});
+function focusStatus() {byId('focus-status').textContent=document.hasFocus()?'Listening · input stays in this tab':'Paused · Focus this page to see your input';}
+window.addEventListener('focus',focusStatus);window.addEventListener('blur',focusStatus);focusStatus();
+</script>
+</html>
